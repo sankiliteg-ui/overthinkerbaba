@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Good Night Annu! 🌙</title>
+    
+    <style>
+        /* --- CSS STYLING (Internal) --- */
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #0d1222;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 100;
+            padding: 20px 40px;
+            background-color: rgba(0, 0, 0, 0.35);
+            border-radius: 15px;
+            backdrop-filter: blur(3px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ffd700;
+            text-shadow: 0 0 15px rgba(255, 255, 0, 0.9);
+            margin-bottom: 5px;
+        }
+
+        .greeting {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+
+        /* 🌟 GLOWING MESSAGE TEXT */
+        .message {
+            font-size: 1.9em;
+            min-height: 1.9em;
+            border-right: 3px solid #ffffff;
+            white-space: pre-wrap;
+            margin: 20px 0;
+            padding-right: 5px;
+            display: inline-block;
+
+            /* Neon Glow */
+            color: #ffb6ff;
+            text-shadow:
+                0 0 6px #ff69b4,
+                0 0 12px #ff1493,
+                0 0 20px #ff00ff,
+                0 0 30px #ff69b4;
+
+            /* Animations */
+            animation:
+                blink-caret 0.75s step-end infinite,
+                glowText 2s ease-in-out infinite alternate;
+        }
+
+        .signature {
+            font-style: italic;
+            font-size: 1.2em;
+            margin-top: 30px;
+            color: #aaa;
+        }
+
+        .heart {
+            color: #ff69b4;
+        }
+
+        /* --- STAR ANIMATION (3D EFFECT) --- */
+        @keyframes move-twinkle {
+            from { background-position: 0 0; }
+            to { background-position: -10000px 5000px; }
+        }
+
+        .stars, .stars2, .stars3 {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .stars {
+            background-image: radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                              radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+                              radial-gradient(3px 3px at 70px 40px, #ddd, transparent);
+            background-size: 1000px 1000px;
+            animation: move-twinkle 150s linear infinite;
+            opacity: 0.8;
+        }
+
+        .stars2 {
+            background-image: radial-gradient(1px 1px at 50px 100px, #fff, transparent),
+                              radial-gradient(2px 2px at 100px 150px, #eee, transparent);
+            background-size: 500px 500px;
+            animation: move-twinkle 100s linear infinite;
+            opacity: 0.6;
+        }
+
+        .stars3 {
+            background-image: radial-gradient(1px 1px at 0 0, #fff, transparent);
+            background-size: 200px 200px;
+            animation: move-twinkle 50s linear infinite;
+            opacity: 0.4;
+        }
+
+        /* Cursor blinking */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white }
+        }
+
+        /* 🔥 Neon Glow Animation */
+        @keyframes glowText {
+            from {
+                text-shadow:
+                    0 0 4px #ff69b4,
+                    0 0 8px #ff1493,
+                    0 0 14px #ff00ff,
+                    0 0 18px #ff69b4;
+                transform: scale(1);
+            }
+            to {
+                text-shadow:
+                    0 0 10px #ffb6ff,
+                    0 0 18px #ff69b4,
+                    0 0 26px #ff00ff,
+                    0 0 34px #ff1493;
+                transform: scale(1.03);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ⭐ Star Layers -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <div class="container">
+        <h1>GD NYT BHAI! 😴</h1>
+        <p class="greeting">
+            Hey ATTITUDE DEVI, <span class="heart">❤️</span>
+        </p>
+        <p id="typed-message" class="message"></p>
+        <p class="signature">- Your Dost</p>
+    </div>
+
+    <script>
+        // --- YOUR GLOWING MESSAGE ---
+        const messageText = `
+ye madam, itna ignore mat kiya karo…
+lagta hai tumhare phone me 'Tuggu-blocker' naam ka koi app chal raha hai 🤨🤌
+Reply de do warna meri rooh tumhare instagram DP me aa kar seen likh degi 👻🤣
+`;
+
+        const typedMessageElement = document.getElementById('typed-message');
+        const typingSpeed = 70;
+
+        let charIndex = 0;
+
+        function typeMessage() {
+            if (charIndex < messageText.length) {
+                typedMessageElement.textContent += messageText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeMessage, typingSpeed);
+            } else {
+                typedMessageElement.style.borderRight = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            typedMessageElement.textContent = ''; 
+            typeMessage();
+        });
+    </script>
+</body>
+</html>
